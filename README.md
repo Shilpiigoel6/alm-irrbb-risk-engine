@@ -31,3 +31,11 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python run_mvp.py
+
+## Sensitivity Charts
+
+### NII vs Shock
+![NII Sensitivity](outputs/nii_sensitivity.png)
+
+### EVE vs Shock
+![EVE Sensitivity](outputs/eve_sensitivity.png)
