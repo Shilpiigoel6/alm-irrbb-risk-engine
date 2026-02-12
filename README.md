@@ -68,21 +68,21 @@ python run_mvp.py
 
 
 # What I observed from the results
-	•	The short repricing bucket is liability-heavy, so NII compresses when rates rise.
-	•	NII improves when rates fall, but not symmetrically for large shocks.
-	•	Under -300bp, volatile deposits hit the rate floor, which caps the funding benefit. This creates visible asymmetry in the NII chart.
-	•	EVE declines under positive shocks because asset PV is more rate-sensitive than liability PV (duration mismatch).
-	•	The EVE curve looks close to linear because the model currently applies parallel shocks without optionality on assets.
+	- The short repricing bucket is liability-heavy, so NII compresses when rates rise.
+	- NII improves when rates fall, but not symmetrically for large shocks.
+	- Under -300bp, volatile deposits hit the rate floor, which caps the funding benefit. This creates visible asymmetry in the NII chart.
+	- EVE declines under positive shocks because asset PV is more rate-sensitive than liability PV (duration mismatch).
+	- The EVE curve looks close to linear because the model currently applies parallel shocks without optionality on assets.
 
 # Simplifications (MVP scope)
-	•	Floating rate pricing uses a short-rate proxy rather than full forward curve modelling
-	•	No mortgage prepayment (only scheduled amortization)
-	•	Only parallel shocks (no steepener/flattener scenarios yet)
-	•	No embedded options (caps/floors) on asset side
+	- Floating rate pricing uses a short-rate proxy rather than full forward curve modelling
+	- No mortgage prepayment (only scheduled amortization)
+	- Only parallel shocks (no steepener/flattener scenarios yet)
+	- No embedded options (caps/floors) on asset side
 
 # Possible Extensions: if extended further, I would add:
-	•	Forward curve-based floating reset logic
-	•	Mortgage prepayment (CPR) sensitivity
-	•	Additional IRRBB shock shapes
-	•	Product-level contribution breakdown for NII and EVE
-	•	Scenario reporting module
+	- Forward curve-based floating reset logic
+	- Mortgage prepayment (CPR) sensitivity
+	- Additional IRRBB shock shapes
+	- Product-level contribution breakdown for NII and EVE
+	- Scenario reporting module
