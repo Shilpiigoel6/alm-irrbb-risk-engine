@@ -60,8 +60,12 @@ python run_mvp.py
 ```
 
 # Sensitivity Charts
-NII vs Parallel Shock
-EVE vs Parallel Shock
+### NII vs Parallel Shock
+![NII Sensitivity](outputs/nii_sensitivity.png)
+
+### EVE vs Parallel Shock
+![EVE Sensitivity](outputs/eve_sensitivity.png)
+
 
 # What I observed from the results
 	•	The short repricing bucket is liability-heavy, so NII compresses when rates rise.
