@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 from src.curves import build_zero_curve, discount_factor, zero_rate_at_month
 from src.cashflows import generate_cashflows_for_position
 from src.config import load_assumptions
@@ -333,6 +334,35 @@ def main() -> None:
     eve_df.to_csv("outputs/eve_results.csv", index=False)
     print("Saved: outputs/eve_results.csv")
 
+    # === Simple Charts (NII and EVE Sensitivity) ===
+
+    # NII chart
+    nii_plot = nii_df.copy()
+    nii_plot["shock_bp"] = nii_plot["rate_shift"] * 10000  # convert to bp
+
+    plt.figure()
+    plt.plot(nii_plot["shock_bp"], nii_plot["nii"])
+    plt.xlabel("Shock (bp)")
+    plt.ylabel("NII")
+    plt.title("NII vs Parallel Rate Shock")
+    plt.savefig("outputs/nii_sensitivity.png")
+    plt.close()
+
+    # EVE chart
+    eve_plot = eve_df.copy()
+    eve_plot["shock_bp"] = eve_plot["rate_shift"] * 10000
+
+    plt.figure()
+    plt.plot(eve_plot["shock_bp"], eve_plot["eve"])
+    plt.xlabel("Shock (bp)")
+    plt.ylabel("EVE")
+    plt.title("EVE vs Parallel Rate Shock")
+    plt.savefig("outputs/eve_sensitivity.png")
+    plt.close()
+
+    print("Saved: outputs/nii_sensitivity.png")
+    print("Saved: outputs/eve_sensitivity.png")
+    print()
 
 if __name__ == "__main__":
     main()

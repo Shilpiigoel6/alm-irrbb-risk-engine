@@ -4,7 +4,7 @@ __pycache__/
 *.pyc
 
 # Outputs / generated files
-outputs/
+outputs/*.csv
 .DS_Store
 
 # Jupyter checkpoints
