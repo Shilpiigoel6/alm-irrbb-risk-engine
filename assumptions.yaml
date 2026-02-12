@@ -1,0 +1,24 @@
+# Behavioral / ALM assumptions (MVP but realistic)
+
+nmd:
+  # Monthly decay rates (runoff of balances)
+  # core: stable deposits decay slowly; volatile: faster runoff
+  monthly_decay_core: 0.005
+  monthly_decay_volatile: 0.030
+
+  # Deposit beta: how much deposit rates move with market rates
+  # beta = 0.2 means deposit rate changes by 20% of market rate change
+  beta_core: 0.20
+  beta_volatile: 0.60
+
+  # Administered rate floor (do not go below this)
+  rate_floor: 0.00
+
+rates:
+  # Reference short rate proxy used in MVP for floating pricing
+  # We’ll use the curve's 12M zero as ref rate in code, but keep this for clarity/fallback
+  fallback_ref_rate: 0.03
+
+eve:
+  # PV horizon for non-maturity deposits (months)
+  nmd_pv_horizon_months: 360

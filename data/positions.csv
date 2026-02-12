@@ -1,0 +1,9 @@
+id,product_type,side,currency,notional,rate_type,coupon_rate,spread,payment_freq_months,next_reprice_months,maturity_months,amortizing,behavioral_flag
+A1,fixed_mortgage,asset,EUR,50000000,fixed,0.045,0.000,1,0,240,1,prepayable
+A2,fixed_mortgage,asset,EUR,30000000,fixed,0.042,0.000,1,0,180,1,prepayable
+A3,floating_loan,asset,EUR,40000000,floating,0.000,0.015,3,3,60,0,none
+A4,bond_portfolio,asset,EUR,25000000,fixed,0.038,0.000,6,0,84,0,none
+L1,nmd_deposit,liability,EUR,60000000,floating,0.010,0.000,1,1,0,0,core
+L2,nmd_deposit,liability,EUR,30000000,floating,0.015,0.000,1,1,0,0,volatile
+L3,term_deposit,liability,EUR,40000000,fixed,0.028,0.000,24,0,24,0,none
+L4,wholesale_funding,liability,EUR,15000000,floating,0.000,0.012,3,3,36,0,none

@@ -1,0 +1,11 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Outputs / generated files
+outputs/
+.DS_Store
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
