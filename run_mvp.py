@@ -338,10 +338,11 @@ def main() -> None:
 
     # NII chart
     nii_plot = nii_df.copy()
-    nii_plot["shock_bp"] = nii_plot["rate_shift"] * 10000  # convert to bp
+    nii_plot["shock_bp"] = nii_plot["rate_shift"] * 10000
+    nii_plot = nii_plot.sort_values("shock_bp")
 
     plt.figure()
-    plt.plot(nii_plot["shock_bp"], nii_plot["nii"])
+    plt.plot(nii_plot["shock_bp"], nii_plot["nii"], marker='o')
     plt.xlabel("Shock (bp)")
     plt.ylabel("NII")
     plt.title("NII vs Parallel Rate Shock")
@@ -351,9 +352,10 @@ def main() -> None:
     # EVE chart
     eve_plot = eve_df.copy()
     eve_plot["shock_bp"] = eve_plot["rate_shift"] * 10000
+    eve_plot = eve_plot.sort_values("shock_bp")
 
     plt.figure()
-    plt.plot(eve_plot["shock_bp"], eve_plot["eve"])
+    plt.plot(eve_plot["shock_bp"], eve_plot["eve"], marker='o')
     plt.xlabel("Shock (bp)")
     plt.ylabel("EVE")
     plt.title("EVE vs Parallel Rate Shock")
